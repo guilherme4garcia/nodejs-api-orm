@@ -29,6 +29,8 @@ router.post('/sum', jsonParser,  (req, res) => {
 
 router.post('/difference', jsonParser, (req, res) => {
     const result = controller.subtracao(req.body)
+    Operacao.create(controller.subtracao(req.body))
+
     res.send(result);
 })
 
